@@ -1,8 +1,9 @@
-import React from "react";
-import { Meta, Scripts, Styles, Routes, useGlobalData } from "@remix-run/react";
+import React from 'react'
+import {Meta, Scripts, Styles, Routes, useGlobalData} from '@remix-run/react'
+import Header from './components/Header'
 
 export default function App() {
-  let data = useGlobalData();
+  let data = useGlobalData()
 
   return (
     <html lang="en">
@@ -11,13 +12,13 @@ export default function App() {
         <Meta />
         <Styles />
       </head>
-      <body>
+      <body className="max-w-3xl m-auto px-5 md:px-0">
+        <Header />
         <Routes />
         <Scripts />
-        <footer>
-          <p>This page was rendered at {data.date.toLocaleString()}</p>
-        </footer>
+        <hr className="border-gray-200" />
+        <footer className="mt-2">Twitter Github</footer>
       </body>
     </html>
-  );
+  )
 }

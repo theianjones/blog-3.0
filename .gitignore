@@ -3,3 +3,8 @@ node_modules/
 /.cache
 /build
 /public/build
+data-build
+*.local
+yarn-error.log
+.history/
+.log/
