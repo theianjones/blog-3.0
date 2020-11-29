@@ -12,7 +12,7 @@ export default function App() {
         <Meta />
         <Styles />
       </head>
-      <body className="max-w-3xl m-auto px-5 md:px-0">
+      <body className="container">
         <Header />
         <Routes />
         <Scripts />

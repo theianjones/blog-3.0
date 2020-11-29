@@ -1,7 +1,7 @@
 import React from 'react'
-import {useRouteData} from '@remix-run/react'
-import {Link, Outlet} from 'react-router-dom'
-
+import {Outlet} from 'react-router-dom'
+import {MDXProvider} from '@mdx-js/react'
+import components from '../components/MdxComponents'
 export function meta() {
   return {
     title: 'Ian Jones Blog',
@@ -11,8 +11,10 @@ export function meta() {
 
 export default function Articles() {
   return (
-    <main className="my-3">
-      <Outlet />
-    </main>
+    <MDXProvider components={components}>
+      <main className="markdown my-3">
+        <Outlet />
+      </main>
+    </MDXProvider>
   )
 }
