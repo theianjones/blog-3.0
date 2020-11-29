@@ -17,7 +17,9 @@ function Header() {
   return (
     <header className="flex flex-row items-center justify-between pt-24 sm:pt-12 md:pt-16 mb-5">
       {/* <Logo /> */}
-      <div>LOGO</div>
+      <Link to="/">
+        <img className="h-12" src="/logo.png" alt="Ian Jones Logo" />
+      </Link>
       <nav className="flex items-center justify-between">
         <Link
           className="mr-3 text-lg font-light hover:text-primary ease-in-out text-gray-500 tracking-wider"
