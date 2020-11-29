@@ -11,6 +11,10 @@ export function meta() {
   }
 }
 
+export function headers({loaderHeaders}: {loaderHeaders: Headers}) {
+  return loaderHeaders
+}
+
 export default function Articles() {
   const childPath = useMatch('/articles/:aid')
   return (

@@ -2,11 +2,16 @@ import React from 'react'
 import {useRouteData} from '@remix-run/react'
 import {IndexRouteData} from '../types'
 import Articles from '../components/Articles'
+
 export function meta() {
   return {
     title: 'Ian Jones Blog',
     description: 'Welcome to remix!',
   }
+}
+
+export function headers({loaderHeaders}: {loaderHeaders: Headers}) {
+  return loaderHeaders
 }
 
 export default function Index() {

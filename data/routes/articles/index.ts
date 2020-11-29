@@ -1,10 +1,17 @@
-import type {DataLoader} from '@remix-run/core'
+import {json, Loader} from '@remix-run/data'
 import {getArticles} from '../utils'
 
-export let loader: DataLoader = async () => {
+export let loader: Loader = async () => {
   const articles = getArticles()
 
-  return {
-    articles,
-  }
+  return json(
+    {
+      articles,
+    },
+    {
+      headers: {
+        'cache-control': 'public, max-age=60, s-maxage=604800',
+      },
+    },
+  )
 }

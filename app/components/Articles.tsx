@@ -8,7 +8,10 @@ interface ArticleItemProps {
 
 const ArticleListItem = ({article}: ArticleItemProps) =>
   article ? (
-    <li className="py-3 px-2 rounded hover:shadow-lg hover:text-primary cursor-pointer transition ease-in-out duration-300 transform hover:scale-105  text-gray-800">
+    <li
+      key={article.slug}
+      className="py-3 px-2 rounded hover:shadow-lg hover:text-primary cursor-pointer transition ease-in-out duration-300 transform hover:scale-105  text-gray-800"
+    >
       <Link to={article.path}>{article?.meta?.title}</Link>
     </li>
   ) : null
