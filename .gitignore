@@ -8,3 +8,5 @@ data-build
 yarn-error.log
 .history/
 .log/
+
+.DS_STORE

@@ -595,6 +595,7 @@
   border-color: rgba(229, 231, 235, var(--tw-border-opacity));
   border-bottom-width: 2px;
   font-size: 90%;
+  font-family: Lato, sans-serif;
 }
 
 /* Code in paragraphs */

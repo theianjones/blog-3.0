@@ -2,7 +2,7 @@ import React from 'react'
 import Highlight, {defaultProps} from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/palenight'
 
-const Code = ({children, className}: any) => {
+const Code = ({children, className = ''}: any) => {
   const language = className.replace(/language-/, '')
   return (
     <div className="lg:-mx-5">
