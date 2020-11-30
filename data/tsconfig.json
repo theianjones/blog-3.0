@@ -3,6 +3,7 @@
   "include": ["**/*"],
   "compilerOptions": {
     "outDir": "../data-build",
-    "module": "commonjs"
+    "module": "commonjs",
+    "resolveJsonModule": true
   }
 }

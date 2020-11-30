@@ -1,11 +1,10 @@
 import * as React from 'react'
-import {useRouteData} from '@remix-run/react'
-import * as Types from 'types'
+import {Outlet} from 'react-router-dom'
 
 export function meta() {
   return {
     title: 'Ian Jones | Courses',
-    description: 'Alright stop. Elaborate and listen...',
+    description: 'Bitesized video courses',
   }
 }
 
@@ -13,15 +12,12 @@ export function headers({loaderHeaders}: {loaderHeaders: Headers}) {
   return loaderHeaders
 }
 
-function Posts() {
-  const {posts} = useRouteData<{posts: Types.Post[]}>()
+function Courses() {
   return (
-    <main className="grid max-w-lg gap-12 pt-12 m-auto">
-      {posts.map((a) => (
-        <Post key={a.id} post={a} />
-      ))}
+    <main className="my-3">
+      <Outlet />
     </main>
   )
 }
 
-export default Posts
+export default Courses

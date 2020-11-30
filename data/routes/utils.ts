@@ -1,7 +1,8 @@
 import fs from 'fs'
 import fm, {FrontMatterResult} from 'front-matter'
 import {ArticleData, MdxFrontmatter} from '../../types'
-import {identity} from 'lodash'
+import {filter, identity} from 'lodash'
+import courses from '../courses.json'
 
 export const getArticles = (filter: Function = identity) => {
   const files = fs.readdirSync('./app/routes/articles', {
@@ -33,4 +34,8 @@ export const getArticles = (filter: Function = identity) => {
     [],
   )
   return articles
+}
+
+export const getCourses = (filter = identity) => {
+  return courses.filter(filter)
 }
