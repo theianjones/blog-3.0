@@ -19,17 +19,22 @@ export default function Index() {
   let data: IndexRouteData = useRouteData()
   return (
     <main className="my-3">
-      <h1 className="text-4xl md:text-6xl font-bold my-12 text-gray-800 font-sans">
-        👋 I'm Ian, I live and work remotely in Northern Virginia building
-        egghead.io
-      </h1>
-      <section className="my-10">
+      <section className="my-24">
+        <h1 className="text-4xl md:text-6xl font-bold text-gray-800 font-sans">
+          👋 Hey, I'm Ian
+        </h1>
+        <p className="font-serif mt-12 prose-lg max-w-xl text-gray-600">
+          I build websites in JavaScript and Ruby for egghead.io. I'm a fan of
+          personal knowledge management and Clojure on the side!
+        </p>
+      </section>
+      <section className="my-20">
         <h2 className="text-gray-500 text-3xl md:text-4xl mb-5">
           Featured Articles
         </h2>
         <Articles articles={data.featuredArticles} />
       </section>
-      <section className="my-3">
+      <section className="my-20">
         <h2 className="text-gray-500 text-3xl md:text-4xl">Video Courses</h2>
         <Courses courses={data.featuredCourses.reverse()} />
       </section>
