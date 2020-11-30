@@ -2,6 +2,7 @@ import React from 'react'
 import {useRouteData} from '@remix-run/react'
 import {IndexRouteData} from '../types'
 import Articles from '../components/Articles'
+import Courses from '../components/Courses'
 
 export function meta() {
   return {
@@ -30,7 +31,7 @@ export default function Index() {
       </section>
       <section className="my-3">
         <h2 className="text-gray-500 text-3xl md:text-4xl">Video Courses</h2>
-        <ul></ul>
+        <Courses courses={data.featuredCourses.reverse()} />
       </section>
     </main>
   )

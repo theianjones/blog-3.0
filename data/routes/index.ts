@@ -1,17 +1,23 @@
 import {json, Loader} from '@remix-run/data'
-import {getArticles} from './utils'
+import {getArticles, getCourses} from './utils'
 import includes from 'lodash/includes'
+import takeRight from 'lodash/takeRight'
 import {MdxFrontmatter} from '../../types'
 import {FrontMatterResult} from 'front-matter'
 
 export let loader: Loader = async () => {
-  const articles = getArticles((article: FrontMatterResult<MdxFrontmatter>) => {
-    return includes(article.attributes.meta?.tags, 'featured')
-  })
+  const featuredArticles = getArticles(
+    (article: FrontMatterResult<MdxFrontmatter>) => {
+      return includes(article.attributes.meta?.tags, 'featured')
+    },
+  )
+
+  const featuredCourses = takeRight(getCourses(), 3)
 
   return json(
     {
-      featuredArticles: articles,
+      featuredArticles,
+      featuredCourses,
     },
     {
       headers: {
