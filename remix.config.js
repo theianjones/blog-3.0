@@ -1,3 +1,7 @@
+let isLocalDev =
+  process.env.VERCEL_ENV !== 'production' &&
+  process.env.VERCEL_ENV !== 'preview'
+
 module.exports = {
   /**
    * The path to the `app` directory, relative to remix.config.js. Defaults to
@@ -5,7 +9,7 @@ module.exports = {
    * by Remix.
    *
    */
-  appDirectory: 'app',
+  appDirectory: isLocalDev ? 'app' : 'app-build',
 
   /**
    * A hook for defining custom routes based on your own file conventions. This

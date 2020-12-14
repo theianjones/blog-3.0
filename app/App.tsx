@@ -4,7 +4,7 @@ import Header from './components/Header'
 import Socials from './components/Socials'
 export default function App() {
   let data = useGlobalData()
-  console.log({data})
+
   return (
     <html lang="en">
       <head>
